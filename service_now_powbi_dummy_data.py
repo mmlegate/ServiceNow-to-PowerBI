@@ -15,21 +15,23 @@ final_date = datetime.datetime(2024, 3, 28)
 lms_options = ['Canvas', 'Zoom', 'Panopto', 'Poll Everywhere', 'Other']
 task_options = ['REQ', 'INC', 'RTASK']
 
+# Define function to generate random dates within range
 def random_dates(start, end, N):
     delta = end - start
-    rand_date_str = [str(initial_date)]
+    rand_date_str = [initial_date]
 
     for i in range(N-2):
         random_day = randrange(delta.days)
         random_day = start + timedelta(days=random_day)
-        rand_date_str.append(str(random_day))
-    rand_date_str.append(str(final_date))
+        rand_date_str.append(random_day)
+    rand_date_str.append(final_date)
     return rand_date_str
 
+# Initialize tickets_data as dictionary
 tickets_data = {
     'Number':['REQ' + str(i) for i in np.random.randint(initial_ticket, final_ticket, N)],
     'LMS':[lms_options[i] for i in np.random.randint(0, 5, N)],
-    'Last Modified':[random_dates(initial_date, final_date, N)],
+    'Last Modified':random_dates(initial_date, final_date, N),
     'Task Type':[task_options[i] for i in np.random.randint(0, 3, N)]
 }
 
@@ -39,4 +41,4 @@ tickets_dataframe = pd.DataFrame.from_dict(tickets_data)
 # Dataframe 'Last Modified' column needs to be in timestamp format for Power BI analysis
 tickets_dataframe['Last Modified'] = pd.to_datetime(tickets_dataframe['Last Modified'] , errors='ignore')
 
-print(tickets_data)
+print(tickets_dataframe)
