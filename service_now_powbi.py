@@ -57,4 +57,4 @@ tickets_dataframe.rename({'number':'Number', 'cmdb_ci':'LMS','sys_updated_on':'L
 # Dataframe 'Last Modified' column needs to be in timestamp format for Power BI analysis
 tickets_dataframe['Last Modified'] = pd.to_datetime(tickets_dataframe['Last Modified'] , errors='ignore')
 
-print(tickets_data)
+print(tickets_dataframe)
