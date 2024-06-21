@@ -3,24 +3,9 @@
 This project leverages the Python integration within Power BI to perform an API call to ServiceNow. The code provided is the API call used to pull data from ServiceNow, as well as the preprocessing of the data in order to make the results human-readable. When pasted into Power BI, the result is a data visualization board of key insights from the data pulled from ServiceNow.
 For security reasons, the API key used for the project has been redacted.
 
-## Table of Contents
-
-- [Introduction](#introduction)
-- [Features](#features)
-- [Installation](#installation)
-- [Usage](#usage)
-- [Technologies Used](#technologies-used)
-
 ## Introduction
 
 At my IT job, I realized it was relatively difficult for consultants to get an understanding of the work that they've done. Meanwhile ServiceNow holds a lot of rich data that documents the lifetime and attributes of tickets. If I bridged the gap between these two entities, I would be able to provide consultants with a useful report of their work and productivity while also making use of the data stored in ServiceNow.
-
-## Features
-
-- Feature 1
-- Feature 2
-- Feature 3
-- ...
 
 ## Installation
 
